@@ -15,6 +15,7 @@ test_resize_doubles_capacity_and_preserves_entries (test_hash_map.HashMapTests.t
 test_update_remove_contains_and_keys (test_hash_map.HashMapTests.test_update_remove_contains_and_keys) ... ok
 test_heap_orders_expiry_tuples (test_min_heap.MinHeapTests.test_heap_orders_expiry_tuples) ... ok
 test_basic_string_commands (test_store.MiniRedisStoreTests.test_basic_string_commands) ... ok
+test_dbsize_and_keys_purge_expired_without_get (test_store.MiniRedisStoreTests.test_dbsize_and_keys_purge_expired_without_get) ... ok
 test_delete_removes_data_lru_and_active_ttl (test_store.MiniRedisStoreTests.test_delete_removes_data_lru_and_active_ttl) ... ok
 test_expire_missing_and_nonpositive_immediate_delete (test_store.MiniRedisStoreTests.test_expire_missing_and_nonpositive_immediate_delete) ... ok
 test_expired_get_does_not_touch_remaining_lru_order (test_store.MiniRedisStoreTests.test_expired_get_does_not_touch_remaining_lru_order) ... ok
@@ -25,7 +26,7 @@ test_single_entry_larger_than_limit_is_rejected_without_overwrite (test_store.Mi
 test_ttl_countdown_expiry_and_missing_codes (test_store.MiniRedisStoreTests.test_ttl_countdown_expiry_and_missing_codes) ... ok
 
 ----------------------------------------------------------------------
-Ran 20 tests in 0.001s
+Ran 21 tests in 0.001s
 
 OK
 
