@@ -42,6 +42,10 @@ class CommandProcessorTests(unittest.TestCase):
             "(error) ERR value is not an integer or out of range",
         )
         self.assertEqual(
+            self.run_command("CONFIG SET maxmemory -1"),
+            "(error) ERR value is not an integer or out of range",
+        )
+        self.assertEqual(
             self.run_command("EXPIRE a nope"),
             "(error) ERR value is not an integer or out of range",
         )
