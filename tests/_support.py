@@ -1,0 +1,18 @@
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, "src")
+if SRC not in sys.path:
+    sys.path.insert(0, SRC)
+
+
+class FakeClock:
+    def __init__(self, start=1000.0):
+        self.current = float(start)
+
+    def __call__(self):
+        return self.current
+
+    def advance(self, seconds):
+        self.current += float(seconds)

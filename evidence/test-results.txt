@@ -1,0 +1,34 @@
+Python runtime: Python 3.13.5
+$ python3 -m compileall -q src main.py tests
+compileall: PASS
+
+$ python3 -m unittest discover -s tests -v
+test_case_insensitive_commands_and_quoted_value (test_cli.CommandProcessorTests.test_case_insensitive_commands_and_quoted_value) ... ok
+test_exit_and_quit (test_cli.CommandProcessorTests.test_exit_and_quit) ... ok
+test_key_listing_and_info (test_cli.CommandProcessorTests.test_key_listing_and_info) ... ok
+test_oom_error (test_cli.CommandProcessorTests.test_oom_error) ... ok
+test_standard_errors (test_cli.CommandProcessorTests.test_standard_errors) ... ok
+test_empty_removals_are_safe (test_doubly_linked_list.DoublyLinkedListTests.test_empty_removals_are_safe) ... ok
+test_insert_remove_and_move_preserve_links (test_doubly_linked_list.DoublyLinkedListTests.test_insert_remove_and_move_preserve_links) ... ok
+test_collision_chaining_preserves_values (test_hash_map.HashMapTests.test_collision_chaining_preserves_values) ... ok
+test_resize_doubles_capacity_and_preserves_entries (test_hash_map.HashMapTests.test_resize_doubles_capacity_and_preserves_entries) ... ok
+test_update_remove_contains_and_keys (test_hash_map.HashMapTests.test_update_remove_contains_and_keys) ... ok
+test_heap_orders_expiry_tuples (test_min_heap.MinHeapTests.test_heap_orders_expiry_tuples) ... ok
+test_basic_string_commands (test_store.MiniRedisStoreTests.test_basic_string_commands) ... ok
+test_dbsize_and_keys_purge_expired_without_get (test_store.MiniRedisStoreTests.test_dbsize_and_keys_purge_expired_without_get) ... ok
+test_delete_removes_data_lru_and_active_ttl (test_store.MiniRedisStoreTests.test_delete_removes_data_lru_and_active_ttl) ... ok
+test_expire_missing_and_nonpositive_immediate_delete (test_store.MiniRedisStoreTests.test_expire_missing_and_nonpositive_immediate_delete) ... ok
+test_expired_get_does_not_touch_remaining_lru_order (test_store.MiniRedisStoreTests.test_expired_get_does_not_touch_remaining_lru_order) ... ok
+test_lru_updates_on_set_and_successful_get (test_store.MiniRedisStoreTests.test_lru_updates_on_set_and_successful_get) ... ok
+test_memory_limit_evicts_lru_and_counts_utf8_bytes (test_store.MiniRedisStoreTests.test_memory_limit_evicts_lru_and_counts_utf8_bytes) ... ok
+test_overwrite_resets_ttl_and_lazy_heap_record_is_harmless (test_store.MiniRedisStoreTests.test_overwrite_resets_ttl_and_lazy_heap_record_is_harmless) ... ok
+test_single_entry_larger_than_limit_is_rejected_without_overwrite (test_store.MiniRedisStoreTests.test_single_entry_larger_than_limit_is_rejected_without_overwrite) ... ok
+test_ttl_countdown_expiry_and_missing_codes (test_store.MiniRedisStoreTests.test_ttl_countdown_expiry_and_missing_codes) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.001s
+
+OK
+
+$ python3 scripts/check_forbidden_builtins.py
+PASS: no forbidden dict/set/collections replacement detected in src/
