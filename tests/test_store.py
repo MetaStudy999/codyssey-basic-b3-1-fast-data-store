@@ -105,6 +105,16 @@ class MiniRedisStoreTests(unittest.TestCase):
         self.assertEqual(store.expire("a", 0), "(integer) 1")
         self.assertEqual(store.exists("a"), "(integer) 0")
 
+    def test_dbsize_and_keys_purge_expired_without_get(self):
+        clock = FakeClock()
+        store = MiniRedis(clock=clock)
+        store.set("old", "1")
+        store.set("live", "2")
+        store.expire("old", 1)
+        clock.advance(2)
+        self.assertEqual(store.dbsize(), "(integer) 1")
+        self.assertEqual(store.keys(), ["live"])
+
 
 if __name__ == "__main__":
     unittest.main()
