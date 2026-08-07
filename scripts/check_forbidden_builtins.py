@@ -18,6 +18,10 @@ for directory, _, filenames in os.walk(SRC):
         tree = ast.parse(source, filename=path)
 
         for node in ast.walk(tree):
+            if isinstance(node, (ast.Dict, ast.DictComp)):
+                violations.append((path, node.lineno, "dict literal/comprehension"))
+            if isinstance(node, (ast.Set, ast.SetComp)):
+                violations.append((path, node.lineno, "set literal/comprehension"))
             if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
                 if node.func.id in ("dict", "set"):
                     violations.append((path, node.lineno, "built-in call " + node.func.id))
