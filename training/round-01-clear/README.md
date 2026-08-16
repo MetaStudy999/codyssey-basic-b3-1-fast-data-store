@@ -10,10 +10,13 @@
 
 B2-1을 먼저 수행하면 함수·클래스·파일 처리·CLI 형태의 Python 구현 경험이 B3-1의 자료구조 구현에 도움이 됩니다. 다만 Python 기본 구현 역량이 이미 있다면 B2-1을 CLEAR하지 않고 B3-1을 시작할 수 있습니다.
 
-진행 순서: Mission 확인 → 용어/개념 → 환경 → 구현 → 검증 → Evidence → CLEAR.
+진행 순서: `START-CHECK.md` → Mission 확인 → 용어/개념 → 환경 → 구현 → 검증 → Evidence → CLEAR.
 
 핵심 문서:
-- BEGINNER-GUIDE.md
-- CHECKLIST.md
+- `START-CHECK.md` — Python/자료구조 시작 전 자가진단
+- `BEGINNER-GUIDE.md`
+- `CHECKLIST.md`
+
+`START-CHECK.md`는 공식 Gate가 아니라 부족한 개념을 미리 찾고 필요한 부분만 보충하기 위한 안내입니다.
 
 상세 폴더와 파일은 실제로 필요해지는 시점에만 생성합니다.
